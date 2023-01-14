@@ -1,0 +1,73 @@
+<html lang="en" dir="ltr">
+  <head>
+    <title> Buffy Space Invaders</title>
+    <link rel="icon" type="image/x-icon" href="../Z space invaders/assets/vampire_fangs_removeb.png">
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <!--<h1 class="resultsDisplay">0</h1>-->
+
+    <div class="grid_wrapper">
+
+<div class="left_side">
+      <header> Buffy The Vampire Slayer</br> Space Invaders Game
+      </header>
+      <div class="grid">
+
+  <span class="gameWon hiddenWon"></span>
+<span class="gameLost hiddenLost"></span>
+        <!--- first box-->
+      </div>
+      <h3 class="resultsDisplay">Current Score:</h3>
+<button id="Play_pause_music">Play Buffy Intro Music &#9658;
+    </button>
+    <audio id="Buffy_Theme_Music" src="../Z space invaders/sounds/Buffy_The_Vampire_Slayer_Theme.mp3"></audio>
+</div>
+
+
+      <div class="content_container">
+      
+
+        <h3>INSTRUCTIONS</h3>
+
+        <p>
+          This is a Buffy the Vampire Slayer styled Space Invaders game - (one of my favourite tv shows).</br> </br>Angel has lost his soul again, and teamed up with Drusilla & Spike to try and kill Buffy.You will have to stake each Vampire if you want to save the world and defeat them! </p>
+
+          <li>You can move Buffy from left to right using ← or → arrow keys.</li>
+          <li>Throw stakes to kill Vampires using the space bar.</li>
+          <li>But be careful, if the Vampires get you, Buffy will die and it'll be GAME OVER!</li>
+          <li>If you successfully stake a Vampire you will gain 100 points!</li>
+          <li>Kill all the vampires and you win the game + 1000 extra points!</li>
+          <li>The Vampires will also occasionally throw fangs at you, remember if they bite you Buffy will die and it'll be GAME OVER!</li>
+       
+        <div class="buttons_container">
+
+          <h3>PLAY THE GAME</h3>
+           <p class="insert_coin_text">Insert a coin!</p>
+
+           <div class="start_elements">
+            <img
+              class="coin"
+              src="https://cdn.dribbble.com/users/570218/screenshots/6219847/fx_magicoin_insertcoin.gif"
+            />
+            <audio id="arcade_coin_sound" src="../Z space invaders/sounds/coin_sound.mp3"></audio>
+       
+          <button class="start_button" disabled>START</button>
+     
+          <button class="reset_button">RESTART</button>
+        </div>
+        
+
+        </div>
+
+
+<audio id="game_over" src="../Z space invaders/sounds/game_over_sound.mp3"></audio>
+
+<audio id="vampire_explode" src="../Z space invaders/sounds/Vampire_explode.wav"></audio>
+
+
+<audio id="game_win" src=""></audio>
+    </div>
+  </body>
+</html>

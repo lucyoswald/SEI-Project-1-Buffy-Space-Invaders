@@ -1,0 +1,353 @@
+* {
+  box-sizing: border-box;
+  font-family: "Fira Code";
+}
+
+body {
+  height: 100vh;
+  margin: 50;
+  /* background-image: url("../assets/graveyard.jpg"); */
+  background-image: url("../assets/darkness-3168319.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+header {
+  font-family: "Buffied";
+  font-size: 55px;
+  text-align: center;
+  color: maroon;
+  position: absolute;
+  line-height: 1;
+  margin-top: -10px;
+  margin-left: 20px;
+  background-color: black;
+}
+
+.resultsDisplay {
+  color: maroon;
+  margin-top: 30px;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 #39ff14;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.left_side {
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 10px;
+  margin-top: 45px;
+  padding: 40px;
+}
+h3 {
+  font-size: 15px;
+  color: black;
+  margin-top: -12px;
+  font-family: "Press Start 2P";
+}
+
+.buttons_container > h3 {
+  margin-top: 20px;
+}
+
+.buttons_container > p {
+  margin-top: -25px;
+}
+
+p {
+  font-size: 13px;
+}
+
+li {
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 5px 0px;
+}
+
+.grid_wrapper {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 40px;
+}
+
+.content_container {
+  background-color: black;
+  width: 400px;
+  height: 600px;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 45px;
+}
+
+.content_container h3,
+p,
+li {
+  background-color: black;
+  color: white;
+}
+.buttons_container {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+  width: 400px;
+  height: 200px;
+  margin-left: -40px;
+  flex-direction: column;
+}
+.start_elements {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.start_button {
+  height: 50px;
+  width: 110px;
+  background-color: maroon;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+  font-family: "Press Start 2P";
+  border: 1px solid white;
+  box-shadow: 0 0 40px 0 #8b0000;
+}
+.reset_button {
+  height: 50px;
+  width: 110px;
+  background-color: maroon;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+  font-family: "Press Start 2P";
+  border: 1px solid white;
+  box-shadow: 0 0 40px 0 #8b0000;
+}
+
+.start_button:hover {
+  background-color: rgb(111, 49, 49);
+}
+
+.start_button:active {
+  background-color: maroon;
+  box-shadow: 0 0 20px 0 #39ff14;
+  transform: translateY(4px);
+}
+.reset_button:hover {
+  background-color: rgb(111, 49, 49);
+}
+
+.reset_button:active {
+  background-color: maroon;
+  box-shadow: 0 0 20px 0 #39ff14;
+  transform: translateY(4px);
+}
+.grid {
+  align-items: center;
+  box-shadow: 0 0 25px 0 #39ff14;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  height: 500px;
+  width: 500px;
+  margin-top: 120px;
+  background-color: black;
+  position: relative;
+}
+.grid div {
+  /* border: 1px solid white; */
+  flex-grow: 1;
+  height: 10%;
+  width: 10%;
+  background-color: black;
+}
+.grid div.shooter {
+  background-image: url("..//assets/buffy_long.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  border-radius: 10px;
+  background-size: 200%;
+}
+.grid div.invader {
+  /* background-image: url("../assets/invader_1.png"); */
+  background-repeat: no-repeat;
+  background-position-x: center;
+  /* background-size: 100%;   */
+  border-radius: 20px;
+}
+.grid > .invader[data-image-id="1"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="2"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="3"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="4"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="5"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="6"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="7"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="8"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="9"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="10"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="11"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="12"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="13"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="14"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="15"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="16"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="17"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="18"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="19"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="20"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="21"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid > .invader[data-image-id="22"] {
+  background-size: 100%;
+  background-position: 15% 75%;
+}
+.grid > .invader[data-image-id="23"] {
+  background-size: 70%;
+}
+.grid > .invader[data-image-id="24"] {
+  background-size: 140%;
+  background-position: top center;
+}
+
+.grid div.laser {
+  background-image: url("../assets/stake.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.grid div.explosion {
+  background-image: url("https://i.gifer.com/GlIU.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 20px;
+}
+
+.grid div.bomb {
+  background-image: url("https://64.media.tumblr.com/948e5851641c0f072487b2a00de40791/95d90b85e6c3c1e0-5a/s1280x1920/2319ffecfb46151b5e659e0349a6af1cbff047d1.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.coin {
+  width: 120px;
+  height: 70px;
+  margin-left: -10px;
+}
+
+.coin:active {
+  box-shadow: 0 0 20px 0 #39ff14;
+  transform: translateY(4px);
+}
+
+#Play_pause_music {
+  color: maroon;
+  margin-top: 10px;
+  padding: 12px;
+  box-shadow: 0 0 10px 0 #39ff14;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 10px;
+  font-family: "Press Start 2P";
+}
+
+.grid > .gameWon {
+  background-image: url("https://media1.popsugar-assets.com/files/thumbor/hQIp7vWlvHb8XgBRh1EMiguWKOM/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2014/04/10/025/n/1922283/cd4ea7c2e4612d70_buffy-kick-1/i/Here-Buffy-kick-just-some-light-sparring.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+
+.grid > .hiddenWon {
+  display: none;
+}
+
+.grid > .gameLost {
+  background-image: url("https://miro.medium.com/max/490/1*glgen3QdWzScVSmQdsz80Q.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+.grid > .hiddenLost {
+  display: none;
+}
