@@ -222,7 +222,7 @@ function moveInvaders() {
   }
   if (invaders.some((invader) => invader >= 90)) {
     gameLost();
-    resultsDisplay.innerText = `GAME OVER! You didn't kill them all! Score: ${score}`;
+    resultsDisplay.innerText = `GAME OVER! The Vampires got you! Score: ${score}`;
     resultsDisplay.setAttribute(
       "style",
       "color: white; font-size: 10px; height: 60px; padding: 20px;"
