@@ -26,13 +26,13 @@ Laser Shooting
 
 I found the laser shooting to be fairly straightforward but ran into errors when I realized that the laser, even though it was working, kept going forever after exiting the grid. I had to implement code to ensure that the laser was removed as soon as it reached the top of the grid.
 
-![Laser remove from grid fully](../Project_1_Space_Invaders/assets/Laser%20remove%20from%20grid.png "Remove from grid fully")
+![Laser remove from grid fully](./assets/Laser%20remove%20from%20grid.png "Remove from grid fully")
 
 Bomb Movement
 
 Similarly, I faced challenges with the bomb movement (fangs), as they also kept going, so I had to make a condition to remove them once they reached the last row in the grid.
 
-![Bomb remove from grid fully](../Project_1_Space_Invaders/assets/Bombs%20removal%20from%20grid.png "Remove from grid fully")
+![Bomb remove from grid fully](./assets/Bombs%20removal%20from%20grid.png "Remove from grid fully")
 
 ### Wins:
 
@@ -43,14 +43,14 @@ Inspiration for the game's visual design was drawn from one of my favourite tv s
 To achieve the dynamic display of gifs upon winning or losing the game, I utilized the concept of hidden classes. I added two spans in the HTML with the class of "gameWon" and "gameLost” and applied a class of "hidden" to each of them. In the CSS, I set the display property of the hidden class to "none". In my JavaScript logic, I selected the elements with the classes "gameWon" and "gameLost” and added the appropriate GIFs and styling to each one. When the game was won or lost, I removed the "hidden" class from the corresponding element, revealing the gif and triggering the appropriate styling. This added an interactive and responsive aspect to the game, making the user experience more engaging.
 
 GAME WON GIF
-![Game Won](../Project_1_Space_Invaders/assets/Game_Won_Gif.png "Game Won GIF")
+![Game Won](./assets/Game_Won_Gif.png "Game Won GIF")
 
 GAME LOST GIF
-![Game Lost](../Project_1_Space_Invaders/assets/Game_Lost_Gif.png "Game Lost GIF")
+![Game Lost](./assets/Game_Lost_Gif.png "Game Lost GIF")
 
 I utilised the Math.random function to create a randomised bomb-dropping pattern. I am really happy with this as I initially had self-doubt and lack of confidence in my solution, however I continued to research and eventually discovered that my approach was correct all along. This experience not only resulted in a successful feature in the game but also an increase in my confidence in my ability to problem solve.
 
-![Math.random](../Project_1_Space_Invaders/assets/math.random.png "Math.random ")
+![Math.random](./assets/math.random.png "Math.random ")
 
 ### Lessons learnt:
 
