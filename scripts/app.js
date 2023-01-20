@@ -2,7 +2,6 @@ const width = 10;
 const numberOfBoxes = width * width;
 boxes = [];
 let invadersId;
-const gridwrapper = document.querySelector(".grid_wrapper ");
 let shooterStartPosition = 94;
 let score = 0;
 let bombsFallInterval;
@@ -18,6 +17,7 @@ const coinImage = document.querySelector(".coin");
 const resetButton = document.querySelector(".reset_button");
 const vampireExplodeSound = document.getElementById("vampire_explode");
 const insertCoinText = document.querySelector(".insert_coin_text");
+const gridwrapper = document.querySelector(".grid_wrapper ");
 
 //Functions//
 //Game Won//
@@ -208,7 +208,7 @@ function moveInvaders() {
       "color: white; font-size: 10px; height: 60px; padding: 20px;"
     );
 
-    gridwrapper.setAttribute("style", "height: 90vh;");
+    gridwrapper.setAttribute("style", "height: 950px;");
 
     gameLost();
     gameOverSound.play();
@@ -228,7 +228,7 @@ function moveInvaders() {
       "color: white; font-size: 10px; height: 60px; padding: 20px;"
     );
 
-    gridwrapper.setAttribute("style", "height: 90vh;");
+    gridwrapper.setAttribute("style", "height: 950px;");
 
     gameOverSound.play();
     if (introMusic.play()) {
@@ -269,7 +269,7 @@ function laserShoot(event) {
           "style",
           "color: green; font-size: 15px; height: 60px; padding: 20px;"
         );
-        gridwrapper.setAttribute("style", "height: 90vh;");
+        gridwrapper.setAttribute("style", "height: 950px;");
         if (introMusic.pause()) {
           introMusic.play();
           playPauseBtn.innerHTML = "Paused &#9208;";
@@ -335,7 +335,7 @@ function invaderBombs() {
         "color: white; font-size: 12px; height: 60px; padding: 20px;"
       );
 
-      gridwrapper.setAttribute("style", "height: 90vh;");
+      gridwrapper.setAttribute("style", "height: 950px;");
 
       gameOverSound.play();
       if (introMusic.play()) {
@@ -350,6 +350,7 @@ function invaderBombs() {
         () => boxes[invaderBombStartPosition].classList.remove("bomb"),
         900
       );
+
       clearInterval(clearBombs);
     }
   }
