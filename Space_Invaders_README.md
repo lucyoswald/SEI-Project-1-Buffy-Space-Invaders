@@ -26,7 +26,7 @@ JavaScript
 
 I spent time thinking about the game's functionality and design, creating a basic layout and features, and whiteboarding the logic and steps needed for each element of the game. I also wrote pseudo code and established a project timeline with a target date for a minimum viable product, with stretch goals for later implementation.
 
-# Insert excalidraw shot 
+Insert excalidraw shot 
 
 ## Build/Code process
 
@@ -40,7 +40,7 @@ I spent time thinking about the game's functionality and design, creating a basi
 
 I created a function called shooterMove that listens to keyboard events and updates the position of the shooter.. The function first calculates the current x coordinate of the shooter and then moves it one box to the right or left depending on the keyboard input, unless it is at the edge of the screen:Invader Movement
 
-# Insert shooter movement shot
+Insert shooter movement shot
 
 
 ## Invader Movement
@@ -52,14 +52,14 @@ I created a function called shooterMove that listens to keyboard events and upda
 * I’ve included a snippet of the moveInvaders function as that’s the most important bit.
 
 
-# Insert invader movement shot
+Insert invader movement shot
 
 
 ## Laser Movement
 
 The laserShoot() function handles the shooting of the laser when the player presses the spacebar. It adds a laser (a class created in my css) and moves it upward until it hits an invader or goes off the game board. If the laser hits an invader, the corresponding invader is removed, and the class ‘explosion’ is added + the player's score is updated. If all invaders are eliminated, the player wins the game. If the laser hits an invader, an explosion animation is played and the laser is removed. 
 
-# Insert laser movement shot
+Insert laser movement shot
 
 ## Invader Bombs
 
@@ -68,11 +68,11 @@ The laserShoot() function handles the shooting of the laser when the player pres
 * I utilised the Math.random function to create a randomised bomb-dropping pattern. I am really happy with this as I initially had self-doubt and lack of confidence in my solution, however I continued to research and eventually discovered that my approach was correct all along. 
 * This experience not only resulted in a successful feature in the game but also an increase in my confidence in my ability to problem solve.
 
-# Insert invader bomb shot
+Insert invader bomb shot
 
 ## Finished Product 
 
-# Insert screen recording
+Insert screen recording
 
 
 ## Wins & Challenges 
@@ -92,7 +92,7 @@ The laserShoot() function handles the shooting of the laser when the player pres
 * When the game was won or lost, I removed the "hidden" class from the corresponding element, revealing the gif and triggering the appropriate styling. 
 * This added an interactive and responsive aspect to the game, making the user experience more engaging.
 
-# Then I will insert a screen recording here of my GAME WON & GAME LOST GIFs. 
+Then I will insert a screen recording here of my GAME WON & GAME LOST GIFs. 
 
 ## Challenges
 
@@ -102,12 +102,12 @@ I would say I found the invader movement particularly challenging. I figured out
 # Laser Shooting
 I found the laser shooting to be fairly straightforward but ran into errors when I realised that the laser, even though it was working, kept going forever after exiting the grid. I had to implement code to ensure that the laser was removed as soon as it reached the top of the grid.
 
-# Insert laser shooting shot
+Insert laser shooting shot
 
 # Bomb Movement
 Similarly, I faced challenges with the bomb movement (fangs), as they also kept going, so I had to make a condition to remove them once they reached the last row in the grid.
 
-# Insert bomb movement shot
+Insert bomb movement shot
 
 
 ## Key Learnings
