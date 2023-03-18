@@ -26,7 +26,8 @@ JavaScript
 
 I spent time thinking about the game's functionality and design, creating a basic layout and features, and whiteboarding the logic and steps needed for each element of the game. I also wrote pseudo code and established a project timeline with a target date for a minimum viable product, with stretch goals for later implementation.
 
-Insert excalidraw shot 
+<img width=49.5% src="https://user-images.githubusercontent.com/116687424/226118384-94007971-9818-411b-a3ca-36ac8648e234.png">
+
 
 ## Build/Code process
 
@@ -38,9 +39,27 @@ Insert excalidraw shot
 
 ## Shooter Movement:
 
-I created a function called shooterMove that listens to keyboard events and updates the position of the shooter.. The function first calculates the current x coordinate of the shooter and then moves it one box to the right or left depending on the keyboard input, unless it is at the edge of the screen:Invader Movement
+I created a function called shooterMove that listens to keyboard events and updates the position of the shooter.. The function first calculates the current x coordinate of the shooter and then moves it one box to the right or left depending on the keyboard input, unless it is at the edge of the screen:
+``` js
+function shooterMove(event) {
+  // create x coordinate to show where the shooter is and make sure they don't move further
+  const x = shooterStartPosition % width;
+  //console.log(`We are in box number ${x + 1} of the current row`);
 
-Insert shooter movement shot
+  if (event.code === "ArrowRight" && x < width - 1) {
+    boxes[shooterStartPosition].classList.remove("shooter");
+    shooterStartPosition++;
+    boxes[shooterStartPosition].classList.add("shooter");
+  } else if (event.code === "ArrowLeft") {
+    if (x > 0) {
+      boxes[shooterStartPosition].classList.remove("shooter");
+      shooterStartPosition--;
+      boxes[shooterStartPosition].classList.add("shooter");
+    }
+  }
+}
+document.addEventListener("keyup", shooterMove);
+```
 
 
 ## Invader Movement
@@ -51,16 +70,77 @@ Insert shooter movement shot
 * Finally, the moveInvaders function checks if the player has been hit by an invader and if any invaders have reached the bottom of the screen, which results in the game ending.
 * I’ve included a snippet of the moveInvaders function as that’s the most important bit.
 
-
-Insert invader movement shot
-
+``` js
+function moveInvaders() {
+  
+  removeInvaders();
+  if (anyInvadersAtEdge() && !noVertical) {
+    invaderMovement = invaderMovement === "left" ? "right" : "left";
+    invaders = moveInvadersDown();
+    noVertical = true;
+  } else {
+    if (invaderMovement === "right") {
+      invadersRight();
+    } else {
+      invadersLeft();
+    }
+    noVertical = false;
+  }
+  addInvaders();
+```
 
 ## Laser Movement
 
 The laserShoot() function handles the shooting of the laser when the player presses the spacebar. It adds a laser (a class created in my css) and moves it upward until it hits an invader or goes off the game board. If the laser hits an invader, the corresponding invader is removed, and the class ‘explosion’ is added + the player's score is updated. If all invaders are eliminated, the player wins the game. If the laser hits an invader, an explosion animation is played and the laser is removed. 
 
-Insert laser movement shot
+``` js
+ function moveLaser() {
+    boxes[laserPosition].classList.remove("laser");
+    laserPosition -= width;
+    boxes[laserPosition].classList.add("laser");
 
+    if (boxes[laserPosition].classList.contains("invader")) {
+      invaders = invaders.filter((invader) => {
+        return !boxes[invader].classList.contains("laser");
+      });
+      resultsDisplay.innerHTML = score += 100;
+      if (invaders.length === 0) {
+        resultsDisplay.innerHTML = `YOU WIN! Final score: ${score + 1000}`;
+        clearInterval(laserId);
+        gameWon();
+        resultsDisplay.setAttribute(
+          "style",
+          "color: green; font-size: 15px; height: 60px; padding: 20px;"
+        );
+        gridwrapper.setAttribute("style", "height: 950px;");
+        if (introMusic.pause()) {
+          introMusic.play();
+          playPauseBtn.innerHTML = "Paused &#9208;";
+        } else {
+          introMusic.play();
+        }
+      }
+
+      boxes[laserPosition].classList.remove("laser");
+      boxes[laserPosition].classList.remove("invader");
+      boxes[laserPosition].style.backgroundImage = "";
+      boxes[laserPosition].classList.add("explosion");
+
+      if (boxes[laserPosition].classList.contains("explosion")) {
+        if (vampireExplodeSound.play()) {
+          vampireExplodeSound.load();
+          vampireExplodeSound.play();
+        }
+
+        setTimeout(
+          () => boxes[laserPosition].classList.remove("explosion"),
+          300
+        );
+        clearInterval(laserId);
+      }
+    }
+  }
+```
 ## Invader Bombs
 
 * This code snippet shows the invader bombs functionality in the space invaders game. The function invaderBombs() selects a random invader to drop a bomb. 
@@ -68,22 +148,64 @@ Insert laser movement shot
 * I utilised the Math.random function to create a randomised bomb-dropping pattern. I am really happy with this as I initially had self-doubt and lack of confidence in my solution, however I continued to research and eventually discovered that my approach was correct all along. 
 * This experience not only resulted in a successful feature in the game but also an increase in my confidence in my ability to problem solve.
 
-Insert invader bomb shot
+``` js
+function invaderBombs() {
+  let invaderBombStartPosition =
+    invaders[Math.floor(Math.random() * invaders.length)];
+  //console.log(invaderBombStartPosition, invaders[invaderBombStartPosition]);
+
+  let clearBombs;
+
+  function moveBombs() {
+    boxes[invaderBombStartPosition].classList.remove("bomb");
+    invaderBombStartPosition += width;
+    boxes[invaderBombStartPosition].classList.add("bomb");
+
+    if (boxes[invaderBombStartPosition].classList.contains("shooter")) {
+      boxes[invaderBombStartPosition].classList.remove("shooter");
+      resultsDisplay.innerText = `GAME OVER! Bitten! Score: ${score}`;
+      clearInterval(clearBombs);
+      gameLost();
+      resultsDisplay.setAttribute(
+        "style",
+        "color: white; font-size: 12px; height: 60px; padding: 20px;"
+      );
+
+      gridwrapper.setAttribute("style", "height: 950px;");
+
+      gameOverSound.play();
+      if (introMusic.play()) {
+        introMusic.pause();
+        playPauseBtn.innerHTML = "Paused &#9208;";
+      }
+      if (vampireExplodeSound.play()) {
+        vampireExplodeSound.pause();
+      }
+
+      setTimeout(
+        () => boxes[invaderBombStartPosition].classList.remove("bomb"),
+        900
+      );
+
+      clearInterval(clearBombs);
+    }
+  }
+```
 
 ## Finished Product 
 
-Insert screen recording
+<img src='https://user-images.githubusercontent.com/116687424/226119048-d8bc9d01-37ff-4c1b-8dbf-b532a0940d73.mov)' >
 
 
 ## Wins & Challenges 
 
-# Wins:
+## Wins:
 
 * It’s no secret as you can tell by looking at the game that I had a lot of fun styling it! While implementing the JavaScript logic proved to be a challenge at times, I found that taking breaks and focusing on the styling whilst my mind was processing everything helped me look at the JS with a fresh perspective + allowed me to enjoy small wins with the CSS keeping my spirits up.
 * Inspiration for the game's visual design was drawn from one of my favourite tv shows, Buffy the Vampire Slayer. 
 * Towards the end I knew that I wanted to create the ‘gameLost’ and ‘gameWon’ functions and thought how cool it would be if the grid displayed different GIFs of Buffy depending on whether the player won or lost.
 
-# Game Won/Game Lost GIFs logic: 
+## Game Won + Game Lost GIFs logic: 
 
 * To achieve the dynamic display of gifs upon winning or losing the game, I utilised the concept of hidden classes. 
 * I added two spans in the HTML with the class of "gameWon" and "gameLost” and applied a class of "hidden" to each of them. 
@@ -92,23 +214,47 @@ Insert screen recording
 * When the game was won or lost, I removed the "hidden" class from the corresponding element, revealing the gif and triggering the appropriate styling. 
 * This added an interactive and responsive aspect to the game, making the user experience more engaging.
 
-Then I will insert a screen recording here of my GAME WON & GAME LOST GIFs. 
+<video src="https://user-images.githubusercontent.com/116687424/226121145-7e37aec2-2028-4205-9cb7-876d0e2340bb.mov"> ## Challenges 
+<video src="https://user-images.githubusercontent.com/116687424/226121159-c25fc421-9ee6-421d-80fe-b1ee2c25b504.mov"> ## Challenges
 
 ## Challenges
-
+ 
 # Invader Movement
 I would say I found the invader movement particularly challenging. I figured out that the best approach was to make a condition for when the invaders hit the edge, and if they did, then move them down. This took me a while to understand and work out.
 
 # Laser Shooting
 I found the laser shooting to be fairly straightforward but ran into errors when I realised that the laser, even though it was working, kept going forever after exiting the grid. I had to implement code to ensure that the laser was removed as soon as it reached the top of the grid.
+``` js
+  if (event.code === "Space") {
+    laserId = setInterval(() => {
+      if (laserPosition - width >= 0) {
+        moveLaser();
+      } else {
+        boxes[laserPosition].classList.remove("laser");
+        clearInterval(laserId);
+      }
+    }, 100);
+  }
+}
 
-Insert laser shooting shot
-
+document.addEventListener("keydown", laserShoot);
+```
 # Bomb Movement
 Similarly, I faced challenges with the bomb movement (fangs), as they also kept going, so I had to make a condition to remove them once they reached the last row in the grid.
+  
+  ``` js
+  clearBombs = setInterval(() => {
+    if (invaderBombStartPosition < 90) {
+      moveBombs();
+    } else {
+      boxes[invaderBombStartPosition].classList.remove("bomb");
+      clearInterval(clearBombs);
+      clearInterval(bombsFallInterval);
+    }
+  }, 100);
+}
 
-Insert bomb movement shot
-
+```
 
 ## Key Learnings
 
