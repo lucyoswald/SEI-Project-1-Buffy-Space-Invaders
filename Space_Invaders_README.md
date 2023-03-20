@@ -214,8 +214,10 @@ function invaderBombs() {
 * When the game was won or lost, I removed the "hidden" class from the corresponding element, revealing the gif and triggering the appropriate styling. 
 * This added an interactive and responsive aspect to the game, making the user experience more engaging.
 
+Game won
 <video src="https://user-images.githubusercontent.com/116687424/226121145-7e37aec2-2028-4205-9cb7-876d0e2340bb.mov">
   
+Game Lost
 <video src="https://user-images.githubusercontent.com/116687424/226121159-c25fc421-9ee6-421d-80fe-b1ee2c25b504.mov"> 
 
 ## Challenges
