@@ -1,7 +1,6 @@
 
 
-# SEI Project 1 - Space Invaders JavaScript Game
-## Overview
+## Space Invaders JavaScript Game
 
 This was my first significant coding project. Built using HTML, CSS, and JavaScript, it is a Buffy the Vampire Slayer-inspired Space Invaders game that enables players to control the Slayer using keyboard inputs to defeat the invading vampires and earn points. The invaders (vampires) can also periodically drop ‘fangs’ on the player. There is a current score attribute so the player can keep track of their score while they play.
 
@@ -199,13 +198,13 @@ function invaderBombs() {
 
 ## Wins & Challenges 
 
-## Wins:
+### Wins:
 
 * It’s no secret as you can tell by looking at the game that I had a lot of fun styling it! While implementing the JavaScript logic proved to be a challenge at times, I found that taking breaks and focusing on the styling whilst my mind was processing everything helped me look at the JS with a fresh perspective + allowed me to enjoy small wins with the CSS keeping my spirits up.
 * Inspiration for the game's visual design was drawn from one of my favourite tv shows, Buffy the Vampire Slayer. 
 * Towards the end I knew that I wanted to create the ‘gameLost’ and ‘gameWon’ functions and thought how cool it would be if the grid displayed different GIFs of Buffy depending on whether the player won or lost.
 
-## Game Won + Game Lost GIFs logic: 
+### Game Won + Game Lost GIFs logic: 
 
 * To achieve the dynamic display of gifs upon winning or losing the game, I utilised the concept of hidden classes. 
 * I added two spans in the HTML with the class of "gameWon" and "gameLost” and applied a class of "hidden" to each of them. 
@@ -222,10 +221,10 @@ Game Lost
 
 ## Challenges
  
-# Invader Movement
+### Invader Movement
 I would say I found the invader movement particularly challenging. I figured out that the best approach was to make a condition for when the invaders hit the edge, and if they did, then move them down. This took me a while to understand and work out.
 
-# Laser Shooting
+### Laser Shooting
 I found the laser shooting to be fairly straightforward but ran into errors when I realised that the laser, even though it was working, kept going forever after exiting the grid. I had to implement code to ensure that the laser was removed as soon as it reached the top of the grid.
 ``` js
   if (event.code === "Space") {
@@ -242,7 +241,7 @@ I found the laser shooting to be fairly straightforward but ran into errors when
 
 document.addEventListener("keydown", laserShoot);
 ```
-# Bomb Movement
+### Bomb Movement
 Similarly, I faced challenges with the bomb movement (fangs), as they also kept going, so I had to make a condition to remove them once they reached the last row in the grid.
   
   ``` js
