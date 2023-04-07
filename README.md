@@ -4,7 +4,7 @@
 
 This was my first significant coding project. Built using HTML, CSS, and JavaScript, it is a Buffy the Vampire Slayer-inspired Space Invaders game that enables players to control the Slayer using keyboard inputs to defeat the invading vampires and earn points. The invaders (vampires) can also periodically drop ‘fangs’ on the player. There is a current score attribute so the player can keep track of their score while they play.
 
-Link to live site: [https://lucyoswald.github.io/].
+#### Link to live site: <strong>https://lucyoswald.github.io/</strong>
 
 ## Project Brief
 * Render a game in the browser
@@ -212,7 +212,10 @@ function invaderBombs() {
 * When the game was won or lost, I removed the "hidden" class from the corresponding element, revealing the gif and triggering the appropriate styling. 
 * This added an interactive and responsive aspect to the game, making the user experience more engaging.
 
+
+
 <img width=80% src="https://user-images.githubusercontent.com/116687424/230679624-dca92b71-ea1c-4324-9763-d2fa0d691f99.gif">
+
 
 <img width=80% src="https://user-images.githubusercontent.com/116687424/230679905-58df0562-c25d-4c79-a507-6c0124d85443.gif">
 
