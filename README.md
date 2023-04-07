@@ -193,8 +193,7 @@ function invaderBombs() {
 
 ## Finished Product 
 
-<img src='https://user-images.githubusercontent.com/116687424/226119048-d8bc9d01-37ff-4c1b-8dbf-b532a0940d73.mov)' >
-
+<img width=80% src="https://user-images.githubusercontent.com/116687424/230680545-120c07d1-9ba5-4fac-855a-90e6c54061e2.gif">
 
 ## Wins & Challenges 
 
@@ -213,11 +212,10 @@ function invaderBombs() {
 * When the game was won or lost, I removed the "hidden" class from the corresponding element, revealing the gif and triggering the appropriate styling. 
 * This added an interactive and responsive aspect to the game, making the user experience more engaging.
 
-Game won
-<video src="https://user-images.githubusercontent.com/116687424/226121145-7e37aec2-2028-4205-9cb7-876d0e2340bb.mov">
-  
-Game Lost
-<video src="https://user-images.githubusercontent.com/116687424/226121159-c25fc421-9ee6-421d-80fe-b1ee2c25b504.mov"> 
+<img width=80% src="https://user-images.githubusercontent.com/116687424/230679624-dca92b71-ea1c-4324-9763-d2fa0d691f99.gif">
+
+<img width=80% src="https://user-images.githubusercontent.com/116687424/230679905-58df0562-c25d-4c79-a507-6c0124d85443.gif">
+
 
 ## Challenges
  
