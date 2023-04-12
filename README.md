@@ -20,6 +20,13 @@ This was my first significant coding project. Built using HTML, CSS, and JavaScr
 HTML
 CSS
 JavaScript
+Excalidraw
+
+
+
+## Timeframe:
+2 weeks | Solo project
+
 
 ## Planning
 
