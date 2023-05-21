@@ -4,7 +4,7 @@
 
 This was my first significant coding project. Built using HTML, CSS, and JavaScript, it is a Buffy the Vampire Slayer-inspired Space Invaders game that enables players to control the Slayer using keyboard inputs to defeat the invading vampires and earn points. The invaders (vampires) can also periodically drop ‘fangs’ on the player. There is a current score attribute so the player can keep track of their score while they play.
 
-#### View the live site [here](https://lucyoswald.github.io/SEI-Project-1-Buffy-Space-Invaders/).
+View the live site [here](https://lucyoswald.github.io/SEI-Project-1-Buffy-Space-Invaders/).
 
 ## Project Brief
 * Render a game in the browser
